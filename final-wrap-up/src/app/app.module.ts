@@ -6,13 +6,15 @@ import { SingleChildComponentComponent } from './single-child-component/single-c
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import {FormsModule} from '@angular/forms';
 import { TwoWayCompBindingComponent } from './two-way-comp-binding/two-way-comp-binding.component';
+import { DirectiveComponentComponent } from './directive-component/directive-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SingleChildComponentComponent,
     TwoWayBindingComponent,
-    TwoWayCompBindingComponent
+    TwoWayCompBindingComponent,
+    DirectiveComponentComponent
   ],
   imports: [
     BrowserModule,
