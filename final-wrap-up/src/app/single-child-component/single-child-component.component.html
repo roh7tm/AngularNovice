@@ -1,0 +1,6 @@
+<button class="btn btn-success" (click)="canDisplay()">Display Users</button>
+<div *ngIf="displayUserPara">
+  <p *ngFor="let user of getUsers">
+    {{user}}
+  </p>
+</div>

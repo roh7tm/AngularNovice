@@ -1,0 +1,111 @@
+<!--
+  One way component binding....
+  Parent data being binded to child data( or child receiving parent data)
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="cols-md-12">
+      <h3 class="nav navbar-header" style="color:darkcyan;font-family: 'JetBrains Mono';">One way component Binding</h3>
+      <br><br><br>
+
+      <div class="cols-sm-4 pull-left" >
+        <label class="label-default" style="font-size: 16px;">Enter Your Name:</label>
+        <input type="text" (focusout)="getInput($event)"><br>
+        <button class="btn btn-primary" (click)="addUser()">Add Me</button>
+
+
+      </div>
+
+      <div class="cols-sm-5 pull-right">
+        <app-single-child-component [getUsers] = "allUsers()"></app-single-child-component>
+      </div>
+
+
+
+
+  </div>
+
+
+  </div>
+
+
+  <div class="divider nav-divider">
+    <br><br>
+     First lets see an example of @Input() syntax... We will pass the name from parent
+     component to child component via @Input()
+
+    <app-two-way-binding [inputNames]= names ></app-two-way-binding>
+
+  </div>
+
+
+</div>
+
+
+-->
+
+
+<!-- Let us see how two way binding works
+  Let us say we have an html form . user enters details and displays it.
+  Now we have another component that edits the user details in case of any errors.
+  So the chain is:
+  user enter details >> the details is displayed >> Edit option in case user has made any mistake >> Updated data is displayed in step 2.
+ scope:        (app-parent) component.                         (child component)                                  (app-parent) component
+
+ -->
+
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="cols-md-12">
+      <h3 class="nav navbar-header" style="color:darkcyan;font-family: 'JetBrains Mono';">Welcome to My Data</h3>
+      <br><br><br>
+
+      <div class="cols-sm-4 pull-left" >
+        <label class="label-default" style="font-size: 16px;">Enter Your Name:</label>
+        <!--<input type="text" (input)="assign($event,'inpName')">-->
+
+        <input type="text" [(ngModel)]="name">
+
+        <br>
+        <label class="label-default" style="font-size: 16px;">Enter Your Email:</label>
+        <!--<input type="text" (input)="assign($event,'inpEmail')"  >-->
+        <input type="text" [(ngModel)]="email">
+        <br>
+        <label class="label-default" style="font-size: 16px;">Enter Your Company:</label>
+        <!--<input type="text" (input)="assign($event,'inpCompany')" >-->
+        <input type="text" [(ngModel)]="company"><br>
+
+        <button class="btn btn-primary" (click)="addUser()" >Save my details</button>
+
+      </div>
+
+      <!-- display -->
+    <div class="pull-right">
+      <button class="btn btn-primary"  [disabled]="users.length<=0 ? true: false"  (click)="showUsers()">Show details</button>
+      <div *ngIf="canDisplay === true">
+        <ul *ngFor="let user of users">
+          <li>{{user.name}}....... {{user.email}}.....{{user.company}}</li>
+        </ul>
+
+
+      </div>
+
+
+    </div>
+      <br><br><br><br><br><br>
+      <div class="pull-left col-sm-6">
+        <br><br><br><br>
+        <app-two-way-comp-binding [usersList]="users" ></app-two-way-comp-binding>
+                                  <!--(finalUsers) = "getUpdatedUserData($event)"-->
+
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h3 class="navbar-header">Welcome to MY BANK</h3>
+
+    <div class="col-lg-10">
+      <div class="col-sm-5">
+
+        <p class="navbar-default" style="font-size: 16px;color: darkblue"> Your Balance is: {{balance}}</p>
+        <br>
+       <!-- <label class="label label-primary" style="font-size: 16px">Enter Amount to deposit: </label>
+        <input type="number" class="text-justify"  (input)="amount">-->
+        <br><br>
+
+        <button class="btn btn-success" type="button" style="align-content: center" (click)="saveBalance()" >Add Money</button>
+        <br>
+        <p class="navbar-brand" *ngIf="display">Your updated balance is {{balance}}</p>
+        <br>
+
+        <app-bank-component [totalAmount]="balance" (balanceUpdate) = "updateBalance($event)"  ></app-bank-component>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

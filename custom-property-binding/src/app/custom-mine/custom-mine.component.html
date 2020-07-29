@@ -1,0 +1,19 @@
+<div class="navbar-right" style="font-size: 16px;color: darkblue;">
+  <ul>
+    Employees Details
+  <ul *ngFor="let employee of employees">
+    <li>{{employee.name}}----{{employee.company}}-----{{employee.salary}}</li>
+  </ul>
+
+  <button *ngIf="employees.length!=0; else: marked" type="button" class="btn btn-danger" (click)="clearData()" >Clear</button>
+    <ng-template #marked>
+
+      <button class="btn btn-success" disabled="true">All clear</button>
+
+    </ng-template>
+
+  </ul>
+
+
+
+</div>

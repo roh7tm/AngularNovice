@@ -1,0 +1,14 @@
+<label>UserName:</label>
+<!--<input type="text"  (input)="onInputChange($event)" [value]="username">-->
+
+<input type="text"  [(ngModel)]="username" >
+
+
+<p>Hey there {{username}}. Welcome to our new formed classes.
+</p>
+
+<button class="btn-primary" [disabled]="username===''"
+    (click)="username = ''"
+    >Click Me</button>
+
+

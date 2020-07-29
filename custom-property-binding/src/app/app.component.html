@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <h3 class="navbar-header">Custom Component Binding</h3>
+
+    <div class="col-lg-10">
+      <div class="col-sm-5">
+        <br>
+        <label class="label label-primary" style="font-size: 16px">Enter Name: </label>
+        <input type="text" class="text-justify" [(ngModel)]="nameu">
+        <br><br>
+        <label class="label label-default" style="font-size: 16px">Enter Company: </label>
+        <input type="text" class="text-justify" [(ngModel)]="company">
+        <br><br>
+        <label class="label label-success" style="font-size: 16px">Enter Salary: </label>
+        <input type="text" class="text-justify" [(ngModel)]="salary">
+          <br><br>
+        <button class="btn btn-success" type="button"  (click)="onButtonClick()"  >Submit</button>
+      </div>
+
+      <div class="col-sm-7">
+        <app-custom-mine [employees]="emp"></app-custom-mine>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

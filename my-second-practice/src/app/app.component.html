@@ -1,0 +1,11 @@
+<button (click)="onButtonClick()">Show/Hide</button>
+<p *ngIf="buttonClick"> {{showPara}}  </p>
+
+
+<div *ngFor="let btnCl of  buttonClicks; let i = index;"  >
+ <p *ngIf="i>=4; else elseOkay;"   [ngStyle]="{backgroundColor: i % 2 == 0 ? 'blue' : 'green' }"
+    [ngClass]="'cont'"  > {{btnCl}}</p>
+  <ng-template #elseOkay >{{btnCl}}</ng-template>
+
+
+</div>

@@ -1,0 +1,31 @@
+<div class="col-sm-8">
+<h4 style="font-family: Arial; font-size: 18px; color: darkred;">See any error in your info?? </h4>
+
+  <button class="btn btn-primary" (click)="display()" > Edit your info</button>
+  <div *ngIf="editInfo=== true">
+  <p>Before proceeding please verify that its you.</p>
+  <label class="label-primary">Enter your email</label>
+  <input type="text" #localTemplateReference>
+  <button class="btn btn-default" (click)="findUserUsingEmail(localTemplateReference.value)"> Search Me</button>
+
+  <div *ngIf="letUserEdit === true">
+
+    <label class="label-primary"> Change Name:
+      <input type="text" [(ngModel)]="particularUser.name" >
+
+    </label>
+
+
+    <label class="label-primary"> Change Company:
+      <input type="text" [(ngModel)]="particularUser.company">
+
+    </label>
+
+    <button class="btn btn-success">Update</button>
+
+
+  </div>
+
+  </div>
+
+</div>
